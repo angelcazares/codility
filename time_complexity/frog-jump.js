@@ -18,5 +18,5 @@
     }
 })();
 
-//expected result: 1
+//expected result: 2
 codility.frogJump.run(5, 9, 3);
