@@ -16,22 +16,19 @@
             const arrayLength = elements.length;
             let tmpName;
             for(let idx = 0; idx < arrayLength; idx++) {
-                tmpName = "item_" + elements[ idx ];
+                tmpName = elements[ idx ];
                 tmp[ tmpName ] = tmp[ tmpName ] || {};
                 tmp[ tmpName ].count = tmp[ tmpName ].count !== undefined? tmp[ tmpName ].count + 1 : 1;
                 tmp[ tmpName ].value = elements[ idx ];
             }
 
-            const filteredKeys = Object.keys(tmp)
-                .filter( (obj) => { 
-                    return tmp[ obj ].count % 2 === 1;
-                });
+            for (var key in tmp) {
+                if (tmp.hasOwnProperty(key) && tmp[ key ].count % 2 === 1) {
+                    return tmp[ key ].value;
+                }
+             }
 
-            if( filteredKeys.length === 0 ) {
-                throw new error("No odd values found");
-            }
-
-            return tmp[ filteredKeys[ 0 ] ].value;
+             return;
         },
         isValidArray : function(elements) {
             /* Array validation */
