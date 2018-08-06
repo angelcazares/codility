@@ -8,7 +8,7 @@
             For example, number 9 has binary representation 1001 and contains a binary gap of length 2.
         */
         run : function(value) {
-            if( !this.validateUserInput( value ) ) {
+            if( !this.isInputValid( value ) ) {
                 return;
             }
             let count =  this.iterateBinaryNumber(value, -1, 0);
@@ -36,7 +36,7 @@
         /*
             Validate user input
         */
-        validateUserInput : function(value) {
+        isInputValid : function(value) {
             /* Check if the number is an integer */
             if( !Number.isInteger(value) ) {
                 console.error("The number is not an integer");

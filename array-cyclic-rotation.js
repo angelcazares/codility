@@ -1,5 +1,4 @@
 (function(){
-
     const codility = {};
     codility.cyclicRotation = { 
         /*
@@ -8,7 +7,7 @@
         For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted 
         right by one index and 6 is moved to the first place). */
         run : function(elements, k) {
-            if( !this.validateParameters(elements, k) || elements.length === 1) {
+            if( !this.isInputValid(elements, k) || elements.length === 1) {
                 return elements;
             }
 
@@ -28,7 +27,7 @@
             }
             return elements;
         },
-        validateParameters : function(elements, k) {
+        isInputValid : function(elements, k) {
             /* Check if the number is an integer */
             if( !Number.isInteger(k) ) {
                 console.error("K must be a positive integer");
