@@ -8,11 +8,10 @@
         run : function(elements) {
 
             let sum = 0;
-            for(let idx = 1; idx <= elements.length + 1; idx++ ) {
+            let n = elements.length + 1;
+            for(let idx = 1; idx <= n; idx++ ) {
                 sum += idx;
-                if( idx <  elements.length + 1) {
-                    sum -= elements[idx - 1];
-                }
+                sum -= idx < n ? elements[idx - 1] : 0;
             }
             return sum;
         }
